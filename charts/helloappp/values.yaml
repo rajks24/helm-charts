@@ -1,8 +1,17 @@
-# Default values for demo-chart-test.
+# Default values for helloapp.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 3
+# This helm chart has been tested with following app images
+# For Java App use
+# Image: ghcr.io/rajks24/helloappjava:1.1.0
+# Github Project : https://github.com/rajks24/helloappjava
+
+# For Python App use
+# Image: ghcr.io/rajks24/helloapppython:2.0
+# Github Project : https://github.com/rajks24/helloapppython
+
+replicaCount: 1
 
 image:
   repository: ghcr.io/rajks24/helloapppython
@@ -25,10 +34,12 @@ serviceAccount:
 
 podAnnotations: {}
 
-podSecurityContext: {}
+podSecurityContext:
+  {}
   # fsGroup: 2000
 
-securityContext: {}
+securityContext:
+  {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -39,11 +50,13 @@ securityContext: {}
 service:
   type: LoadBalancer
   port: 80
+  # targetPort: 8080
 
 ingress:
   enabled: false
   className: ""
-  annotations: {}
+  annotations:
+    {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
@@ -56,20 +69,21 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-resources: {}
+resources:
+  # {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
 
 autoscaling:
-  enabled: false
+  enabled: true
   minReplicas: 1
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80

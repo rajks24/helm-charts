@@ -1,10 +1,23 @@
-# helloapppython chart
+# helloapp chart
 
 ## Introduction
 
 This is a test api and webapp with some common functionalities to test various needs for development, environment setup and devops tools connectivity and workflows.
 
 ![App snapshot](extras/image.png)
+
+## Image Usage
+
+This helm chart has been tested with following app images
+
+- For Java App use
+Image: ghcr.io/rajks24/helloappjava:1.1.0
+Github Project : https://github.com/rajks24/helloappjava
+
+- For Python App use
+Image: ghcr.io/rajks24/helloapppython:2.0
+Github Project : https://github.com/rajks24/helloapppython
+
 
 ## Api's for the app
 
@@ -35,7 +48,3 @@ This is a test api and webapp with some common functionalities to test various n
 ## Contact
 
 You can reach me on [Twitter @rajinh24](https://twitter.com/rajinh24)
-
-## License
-
-[![License](https://img.shields.io/github/license/rajks24/markdown-badges?style=flat-square&logo=github)](./LICENSE)
