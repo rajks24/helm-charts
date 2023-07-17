@@ -1,6 +1,6 @@
 apiVersion: v2
 name: helloapp
-description: A Helm chart for Kubernetes
+description: Test api and webapp to test development, environment setup and devops tools connectivity.
 
 # A chart can be either an 'application' or a 'library' chart.
 #
